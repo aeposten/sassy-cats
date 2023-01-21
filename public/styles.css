@@ -1,111 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-}
-
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  font-family: 'Poppins', sans-serif;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.gray {
-    color: #918E9B;
-}
+/* 
+font-family: 'Roboto', sans-serif;
+font-family: 'Secular One', sans-serif;
+*/
 
 
-* {
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Secular+One&display=swap');
+
+*, *::before, *::after {
     box-sizing: border-box;
-}
+  }
 
-body {
+  * {
     margin: 0;
-}
+  }
 
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
 
-section {
-    padding: 1.25em;
-}
-nav {
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  #root, #__next {
+    isolation: isolate;
+  }
+
+header {
     display: flex;
-    padding: 1.25em 1.8em;
-    box-shadow: 0em 0.18em 0.5em rgba(0, 0, 0, 0.1);
+    justify-content: space-evenly;
+    background: linear-gradient(90deg, #18d9d8 1.18%, #006eff 100%);
+    color: white;
 }
 
-.nav-logo {
-    max-width: 6.25em;
-}
-
-.hero {
+.header-title {
     display: flex;
-    flex-direction: column;
-}
-
-.photo-grid {
-    max-width: 800px;
-    align-self: center;
-}
-
-.hero-heading {
-    margin-bottom: 1em;
-}
-
-.hero-txt {
-    margin-top: 0;
-}
-
-.card {
-    width: 30vw;
-    font-size: 0.75rem;
-}
-
-.card-image {
-    width: 300px;
-    border-radius: 0.56em;
-}
-
-.card-stats {
-    display: flex;
+    justify-content: flex-start;
     align-items: center;
+    flex: 1;
 }
 
-.card-star {
-    height: 0.8em;
+h1 {
+    font-family: 'Secular One', sans-serif;
+    font-size: 1.5rem;
+}
+
+.subheading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    flex: 1;
+}
+
+.sassy-icon {
+    width: 3em;
 }
