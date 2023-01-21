@@ -144,4 +144,9 @@ button {
     button {
         max-width: 30vw;
     }
+
+    .meme-img {
+        max-width: 500px;
+        max-height: 500px;
+    }
   }
