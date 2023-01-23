@@ -2,36 +2,38 @@ import Form from "./Form";
 import Image from "./Image";
 
 import { useState } from "react";
-
 const URL = "https://api.thecatapi.com/v1/images/search";
 
 function Meme() {
-  const [imgURL, setImageURL] = useState(require(`../img/cat-crab.jpg`));
-  const [memeText, setMemeText] = useState({
+  const [meme, setMeme] = useState({
     topLine: "",
     bottomLine: "",
+    imgURL: require(`../img/cat-crab.jpg`),
   });
 
   async function fetchImage() {
     const response = await fetch(URL);
     const data = await response.json();
 
-    setImageURL(data[0].url);
+    setMeme((prevState) => {
+      return {
+        ...prevState,
+        imgURL: data[0].url,
+      };
+    });
   }
 
   function handleChange(e) {
-    setMemeText({
-      ...memeText,
+    setMeme({
+      ...meme,
       [e.target.name]: e.target.value,
-    }
-    );
-
+    });
   }
 
   return (
     <main>
-      <Form handleChange={handleChange} memeText={memeText}/>
-      <Image fetchImage={fetchImage} imgURL={imgURL} memeText={memeText} setMemeText={setMemeText}/>
+      <Form handleChange={handleChange} meme={meme} setMeme={setMeme} />
+      <Image fetchImage={fetchImage} meme={meme} setMeme={setMeme} />
     </main>
   );
 }
