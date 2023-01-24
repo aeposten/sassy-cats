@@ -1,25 +1,4 @@
-function Image({ fetchImage, meme, setMeme }) {
-  function handleClick() {
-    fetchImage();
-    setMeme((prevState) => {
-      return {
-        ...prevState,
-        topLine: "",
-        bottomLine: "",
-      };
-    });
-  }
-
-  function handleClearText() {
-    setMeme((prevState) => {
-      return {
-        ...prevState,
-        topLine: "",
-        bottomLine: "",
-      };
-    });
-  }
-
+function Image({ meme, handleClick, handleClearText }) {
   return (
     <section className="img-sec" id="img-sec">
       <div

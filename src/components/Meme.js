@@ -30,10 +30,29 @@ function Meme() {
     });
   }
 
+  function handleClick() {
+    fetchImage();
+    handleClearText();
+  }
+
+  function handleClearText() {
+    setMeme((prevState) => {
+      return {
+        ...prevState,
+        topLine: "",
+        bottomLine: "",
+      };
+    });
+  }
+
   return (
     <main>
-      <Form handleChange={handleChange} meme={meme} setMeme={setMeme} />
-      <Image fetchImage={fetchImage} meme={meme} setMeme={setMeme} />
+      <Form handleChange={handleChange} meme={meme} />
+      <Image
+        meme={meme}
+        handleClick={handleClick}
+        handleClearText={handleClearText}
+      />
     </main>
   );
 }
