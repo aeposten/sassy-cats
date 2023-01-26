@@ -11,6 +11,7 @@ function Meme() {
     imgURL: require(`../img/cat-crab.jpg`),
   });
 
+  
   async function fetchImage() {
     const response = await fetch(URL);
     const data = await response.json();
@@ -23,10 +24,13 @@ function Meme() {
     });
   }
 
+
+
   function handleChange(e) {
+    const {name, value} = e.target;
     setMeme({
       ...meme,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   }
 
